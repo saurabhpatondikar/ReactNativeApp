@@ -44,7 +44,7 @@ const Home=(props)=>{
     )
 }
 
-function mapStateToProps(state:stateProp){
+const mapStateToProps=(state:stateProp)=>{
 const {addition}= state
     return{
     addition:addition

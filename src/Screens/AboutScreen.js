@@ -26,7 +26,7 @@ const AboutScreen=(props)=>{
             </View>
     )
 }
-function mapStateToProps(state:Props){
+const mapStateToProps=(state:Props)=>{
     const{addition}= state
     return{
         addition:addition
