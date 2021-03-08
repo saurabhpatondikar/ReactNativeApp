@@ -1,7 +1,7 @@
 // @flow
 import React from 'react'
 import {Text,View} from 'react-native'
-import {styles} from '../../Styles/styleSheet'
+import {styles} from '../../Styles/StyleSheet'
 type Props={
     name:string
 }

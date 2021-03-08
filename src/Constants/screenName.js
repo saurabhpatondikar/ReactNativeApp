@@ -1,6 +1,6 @@
-// @flow
-export const screensName={
+
+export const ScreensName={
     HomeScreen:"Home",
-    AboutScre:"About",
-    LastScre:"Last"
+    AboutScreen:"About",
+    LastScreen:"Last"
 }

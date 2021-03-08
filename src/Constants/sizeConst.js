@@ -1,5 +1,5 @@
-// @flow
-export const sizeConst={
-    percentage80:'80%',
-    size60:60
+
+export const SizeConst={
+    Percentage_80:'80%',
+    Size_60:60
 }

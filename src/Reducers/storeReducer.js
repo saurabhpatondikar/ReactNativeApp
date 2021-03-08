@@ -1,10 +1,10 @@
 // @flow
-import {constList} from "../Constants/constantsAct";
+import {ConstList} from "../Constants/ConstantsAct";
 type Props={
     name:string
 }
 type Action={
-    type:"Add_Data_Request",
+    type:ConstList.Add_Data,
     user:Props
 }
 var initialState={
@@ -13,7 +13,7 @@ var initialState={
 export const addition=(state:Props=initialState,action:Action)=>{
     switch (action.type)
     {
-        case constList.ADD_DATA:
+        case ConstList.Add_Data:
             return {
                 addition:action.user
         };

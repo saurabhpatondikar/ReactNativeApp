@@ -1,4 +1,4 @@
-// @flow
-export  const constList={
-ADD_DATA:"Add_Data_Request"
+
+export  const ConstList={
+Add_Data:"Add_Data_Request"
 }

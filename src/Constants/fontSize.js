@@ -1,4 +1,4 @@
-// @flow
-export const fontSize={
-    font16:16
+
+export const FontSize={
+    Font_16:16
 }

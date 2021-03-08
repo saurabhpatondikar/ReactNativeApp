@@ -7,7 +7,7 @@
  */
 // @flow
 import React from 'react';
-import {addition} from './src/Reducers/storeReducer'
+import {addition} from './src/Reducers/StoreReducer'
 import HomeScreen from './src/Screens/HomeScreen'
 import AboutScreen from './src/Screens/AboutScreen'
 import LastScreen from './src/Screens/LastScreen'
@@ -15,7 +15,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {applyMiddleware, createStore} from "redux";
 import {Provider} from 'react-redux'
-import {screensName} from './src/Constants/screenName'
+import {ScreensName} from './src/Constants/ScreenName'
 import thunk from "redux-thunk"
 const store=createStore(addition,applyMiddleware(thunk))
 const Stack = createStackNavigator();
@@ -24,9 +24,9 @@ const App = () => {
     <Provider store={store}>
    <NavigationContainer>
        <Stack.Navigator>
-           <Stack.Screen name={screensName.HomeScreen} component={HomeScreen} options={{headerShown:false}}/>
-           <Stack.Screen name={screensName.AboutScre} component={AboutScreen} options={{headerShown:false}}/>
-           <Stack.Screen name={screensName.LastScre} component={LastScreen} options={{headerShown:false}}/>
+           <Stack.Screen name={ScreensName.HomeScreen} component={HomeScreen} options={{headerShown:false}}/>
+           <Stack.Screen name={ScreensName.AboutScreen} component={AboutScreen} options={{headerShown:false}}/>
+           <Stack.Screen name={ScreensName.LastScreen} component={LastScreen} options={{headerShown:false}}/>
        </Stack.Navigator>
    </NavigationContainer>
 </Provider>

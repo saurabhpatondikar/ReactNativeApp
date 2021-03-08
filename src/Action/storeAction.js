@@ -1,17 +1,18 @@
 // @flow
-import {constList} from '../Constants/constantsAct'
+import {ConstList} from '../Constants/ConstantsAct'
 type Props={
     name:string
 }
 type Action={
-    type:"Add_Data_Request",
+    type:string,
     user:Props
 }
+type StoreAct=(dispatch:Dispatch)=>any
 type Dispatch=(action:Action)=>any
-export const storeAction=(name:Props):Dispatch=>{
-    return dispatch => {
-        dispatch(success(name));
+export const StoreAction=(user:Props):StoreAct=>{
+    return (dispatch) => {
+        dispatch({ type: ConstList.ADD_DATA, user });
 
     };
-    function success(user:Props) { return { type: constList.ADD_DATA, user } }
+    
 }

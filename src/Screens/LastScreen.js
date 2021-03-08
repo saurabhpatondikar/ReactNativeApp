@@ -2,12 +2,12 @@
 import React from 'react';
 import {View} from "react-native";
 import {connect} from 'react-redux'
-import ButtonNormal from '../Component/Buttons/ButtonsNormal'
-import {screensName} from '../Constants/screenName'
-import HeaderLeft from '../Component/HeadingComp/HeadingLeft'
+import SimpleButton from '../Component/Buttons/ButtonsNormal'
+import {ScreensName} from '../Constants/ScreenName'
+import HeaderLeft from '../Component/Header/HeadingLeft'
 import {Colors} from '../Constants/colors'
-import {buttonText} from '../Constants/textButtons'
-import {styles} from '../Styles/styleSheet'
+import {ButtonText} from '../Constants/TextButtons'
+import {styles} from '../Styles/StyleSheet'
 
 type Props={
   name:string,
@@ -15,13 +15,13 @@ type Props={
 }
 const LastScreen=(props)=>{
     return(
-        <View style={[styles.backGroundStyle]}>
-            <View style={[styles.flex_05,styles.doLeft]}>
+        <View style={[styles.BackgroundStyle]}>
+            <View style={[styles.Flex_05,styles.DoLeft]}>
               <HeaderLeft name={props.addition?props.addition.name:''}/>
             </View>
-                <View style={[styles.flex_05,styles.doCenter]}>
-                <ButtonNormal navigate={props.navigation} screenName={screensName.HomeScreen} color={Colors.DarkColor} textColor={Colors.whiteColor} text={buttonText.homeText}/>
-                <ButtonNormal navigate={props.navigation} screenName={screensName.AboutScre} color={Colors.DarkColor} textColor={Colors.whiteColor} text={buttonText.prevText}/>
+                <View style={[styles.Flex_05,styles.DoCenter]}>
+                 <SimpleButton navigate={props.navigation} ScreenName={ScreensName.HomeScreen} color={Colors.DarkColor} TextColor={Colors.WhiteColor} text={ButtonText.HomeText}/>
+                 <SimpleButton navigate={props.navigation} ScreenName={ScreensName.AboutScreen} color={Colors.DarkColor} TextColor={Colors.WhiteColor} text={ButtonText.PrevText}/>
                 </View>
             </View>
     )
