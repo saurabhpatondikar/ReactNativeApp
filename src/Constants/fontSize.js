@@ -1,4 +1,1 @@
-
-export const FontSize={
-    Font_16:16
-}
+export const FontSize = {Font_16: 16};
