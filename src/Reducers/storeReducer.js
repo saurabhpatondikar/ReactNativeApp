@@ -4,13 +4,13 @@ type Props = {
   name: string,
 };
 type Action = {
-  type: ConstList.Add_Data,
+  type: string,
   user: Props,
 };
-var initialState = {
+var InitialState = {
   name: '',
 };
-export const addition = (state: Props = initialState, action: Action) => {
+export const addition = (state: Props = InitialState, action: Action) => {
   switch (action.type) {
     case ConstList.Add_Data:
       return {

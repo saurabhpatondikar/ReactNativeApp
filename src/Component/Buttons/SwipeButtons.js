@@ -1,10 +1,17 @@
+//@flow
 import React from 'react';
 import {Colors} from '../../Constants/Colors';
 import {SizeConst} from '../../Constants/SizeConst';
 import SwipeButton from 'rn-swipe-button';
 import {FontSize} from '../../Constants/FontSize';
 
-const SwipeButtons = (props) => {
+type Props = {
+  navigate: any,
+  ScreenName: string,
+  title: string,
+  BackColor: any,
+};
+const SwipeButtons = (props: Props) => {
   const onSwipeNext = (navigate, screen) => {
     navigate.navigate(screen);
   };

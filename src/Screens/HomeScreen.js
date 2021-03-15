@@ -16,7 +16,6 @@ type stateProp = {
 };
 type Props = {
   name: string,
-  NameEnter: string,
   dispatch: any,
   addition: {name: string},
   navigation: any,
