@@ -21,7 +21,7 @@ type Props = {
   navigation: any,
 };
 const Home = (props: Props) => {
-  const [NameEnter, setNameEnter] = useState('');
+  const [nameEnter, setNameEnter] = useState('');
   const handleTextChange = (text: string) => {
     props.dispatch(StoreAction({name: text}));
     setNameEnter(text);
@@ -35,7 +35,7 @@ const Home = (props: Props) => {
           </Text>
         </View>
         <TextInput
-          value={NameEnter}
+          value={nameEnter}
           style={[styles.TextInputField]}
           placeholder={ButtonText.PlaceHolderText}
           onChangeText={(text) => handleTextChange(text)}
