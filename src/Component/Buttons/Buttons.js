@@ -2,6 +2,7 @@
 import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
 import {styles} from '../../Styles/StyleSheet';
+import {Colors} from '../../Constants/Colors';
 type Props = {
   text: string,
   ScreenName: string,
@@ -26,7 +27,9 @@ const Buttons = (props: Props) => {
         testID={'button_text'}
         style={[
           styles.TextPress,
-          {color: props.TextColor ? props.TextColor : null},
+          props.TextColor === Colors.DarkColor
+            ? styles.DarkButtonText
+            : styles.WhiteButtonText,
         ]}>
         {props.text}
       </Text>

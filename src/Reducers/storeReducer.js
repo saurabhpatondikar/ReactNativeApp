@@ -7,7 +7,7 @@ type Action = {
   type: string,
   user: Props,
 };
-var InitialState = {
+let InitialState = {
   name: '',
 };
 export const addition = (state: Props = InitialState, action: Action) => {

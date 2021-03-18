@@ -8,7 +8,7 @@ type Props = {
 const HeaderLeft = (props: Props) => {
   return (
     <View>
-      <Text style={[styles.textPress]}>{props.name}</Text>
+      <Text style={[styles.TextPress]}>{props.name}</Text>
     </View>
   );
 };

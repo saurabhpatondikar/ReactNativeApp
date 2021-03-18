@@ -23,4 +23,6 @@ export const styles = StyleSheet.create({
   Padding_05: {padding: 5},
   JustConFlexStrt: {justifyContent: 'flex-start'},
   AlFlexEnd: {alignSelf: 'flex-end'},
+  DarkButtonText: {color: Colors.DarkColor},
+  WhiteButtonText: {color: Colors.WhiteColor},
 });
