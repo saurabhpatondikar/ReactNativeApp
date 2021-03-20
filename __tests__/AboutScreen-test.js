@@ -19,10 +19,14 @@ describe('Rendering AboutScreen', () => {
   );
   test('render AboutScreen correctly', async () => {
     const {getByText} = render(component);
+    const ButtonPress = getByText(ButtonText.PressText);
+    expect(ButtonPress).toBeTruthy();
     const ButtonNext = getByText(ButtonText.NextText);
     expect(ButtonNext).toBeTruthy();
     const ButtonPrev = getByText(ButtonText.PreviousText);
     expect(ButtonPrev).toBeTruthy();
+    const SlideButton = getByText(ButtonText.SlideText);
+    expect(SlideButton).toBeTruthy();
   });
   describe('Buttons Click', () => {
     const navigation = {navigate: jest.fn()};

@@ -17,8 +17,11 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-native": "0.63.4",
+    "react-native-elements": "^3.3.2",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-safe-area-context": "^3.1.9",
+    "react-native-slide-to-unlock": "^0.1.6",
+    "react-native-vector-icons": "^8.1.0",
     "react-redux": "^7.2.2",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
@@ -51,7 +54,7 @@
       "./node_modules/react-native-gesture-handler/jestSetup.js"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|ReactNativeApplication|rn-swipe-button|react-native-iphone-x-helper|@react-navigation)/)"
+      "node_modules/(?!(react-native|ReactNativeApplication|rn-swipe-button|react-native-iphone-x-helper|@react-navigation|react-native-slide-to-unlock|react-native-elements|react-native-size-matters|react-native-ratings)/)"
     ]
   }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.telephony.TelephonyManager;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactApplicationContext;
@@ -27,4 +28,24 @@ public class ReactJavaModuleClass extends ReactContextBaseJavaModule {
         return "ReactJava";
     }
 
+    public  void sendEvent(ReactContext reactContext,
+                           String eventName,
+                           @Nullable WritableMap params) {
+        reactContext
+                .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
+                .emit(eventName, params);
+    }
+    @ReactMethod
+    public  void checkForEmulator(){
+        TelephonyManager tm = (TelephonyManager)reactContext.getSystemService(Context.TELEPHONY_SERVICE);
+        String networkOperator = tm.getNetworkOperatorName();
+        WritableMap params = Arguments.createMap();
+        if("Android".equals(networkOperator)) {
+            params.putString("deviceType", "Emulator");
+        }
+        else {
+            params.putString("deviceType", "Real");
+        }
+        sendEvent(reactContext, "DeviceCheck", params);
+    }
 }

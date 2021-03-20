@@ -7,7 +7,7 @@ import {ScreensName} from '../Constants/ScreenName';
 import HeaderLeft from '../Component/Header/HeadingLeft';
 import {Colors} from '../Constants/Colors';
 import {ButtonText} from '../Constants/TextButtons';
-import {styles} from '../Styles/StyleSheet';
+import {Styles} from '../Styles/StyleSheet';
 
 type Props = {
   name: string,
@@ -16,17 +16,19 @@ type Props = {
 };
 const LastScreen = (props: Props) => {
   return (
-    <View style={[styles.BackgroundStyle]}>
-      <View style={[styles.Flex_05, styles.DoLeft]}>
+    <View style={[Styles.BackgroundStyle]}>
+      <View style={[Styles.Flex_05, Styles.DoLeft]}>
         <HeaderLeft name={props.addition ? props.addition.name : ''} />
       </View>
-      <View style={[styles.Flex_05, styles.DoCenter]}>
+      <View style={[Styles.Flex_05, Styles.DoCenter]}>
         <SimpleButton
           navigate={props.navigation}
           ScreenName={ScreensName.HomeScreen}
           color={Colors.DarkColor}
           TextColor={Colors.WhiteColor}
           text={ButtonText.HomeText}
+          enable={false}
+          opacity={1}
         />
         <SimpleButton
           navigate={props.navigation}
@@ -34,6 +36,8 @@ const LastScreen = (props: Props) => {
           color={Colors.DarkColor}
           TextColor={Colors.WhiteColor}
           text={ButtonText.PreviousText}
+          enable={false}
+          opacity={1}
         />
       </View>
     </View>

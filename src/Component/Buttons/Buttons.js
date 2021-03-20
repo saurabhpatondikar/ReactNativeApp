@@ -1,7 +1,7 @@
 //@flow
 import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
-import {styles} from '../../Styles/StyleSheet';
+import {Styles} from '../../Styles/StyleSheet';
 import {Colors} from '../../Constants/Colors';
 type Props = {
   text: string,
@@ -9,6 +9,8 @@ type Props = {
   navigate: any,
   color: any,
   TextColor: any,
+  enable: any,
+  opacity: any,
 };
 const Buttons = (props: Props) => {
   const nextScreen = (navigate, screen) => {
@@ -16,20 +18,24 @@ const Buttons = (props: Props) => {
   };
   return (
     <TouchableOpacity
+      disabled={props.enable ? props.enable : false}
       testID={'button'}
       onPress={() => nextScreen(props.navigate, props.ScreenName)}
       style={[
-        styles.DoCenter,
-        styles.ButtonDesig,
+        Styles.DoCenter,
+        Styles.ButtonDesign,
         {backgroundColor: props.color},
+        props.opacity && props.opacity < 1
+          ? Styles.ButtonOpacity05
+          : Styles.ButtonOpacity1,
       ]}>
       <Text
         testID={'button_text'}
         style={[
-          styles.TextPress,
+          Styles.TextPress,
           props.TextColor === Colors.DarkColor
-            ? styles.DarkButtonText
-            : styles.WhiteButtonText,
+            ? Styles.DarkButtonText
+            : Styles.WhiteButtonText,
         ]}>
         {props.text}
       </Text>

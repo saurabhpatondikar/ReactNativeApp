@@ -3,15 +3,20 @@ import {render, fireEvent} from '@testing-library/react-native';
 import {ButtonText} from '../src/Constants/TextButtons';
 import HomeScreen from '../src/Screens/HomeScreen';
 import {createStore, applyMiddleware} from 'redux';
+import {NativeModules, NativeEventEmitter} from 'react-native';
 import {addition} from '../src/Reducers/StoreReducer';
 import {Provider} from 'react-redux';
 import Button from '../src/Component/Buttons/Buttons';
 import thunk from 'redux-thunk';
-
+const emitter = new NativeEventEmitter();
 describe('Rendering HomeScreen', () => {
   const initialState = {
     name: 'mock name',
   };
+  beforeEach(() => {
+    NativeModules.TestModule = {test: jest.fn()};
+    emitter.emit('addListener');
+  });
   const mockStore = createStore(addition, initialState, applyMiddleware(thunk));
   const component = (
     <Provider store={mockStore}>
@@ -22,9 +27,7 @@ describe('Rendering HomeScreen', () => {
   test('render All HomeScreen Buttons correctly', () => {
     const {getAllByText} = render(component);
     const ButtonAll = getAllByText(ButtonText.PressText);
-    expect(ButtonAll.length).toBe(3);
-    const SlideButton = getAllByText(ButtonText.SlideText);
-    expect(SlideButton.length).toBe(1);
+    expect(ButtonAll.length).toBe(1);
   });
 
   describe('Name Enter on Text view', () => {
@@ -42,20 +45,10 @@ describe('Rendering HomeScreen', () => {
       );
     });
   });
-  test('name display on text', () => {
-    const {getByText} = render(component);
-    const header = getByText(mockStore.getState().addition.name);
-    expect(header).toBeTruthy();
-  });
-  describe('Buttons Click', () => {
+  describe('Button Click', () => {
     const navigation = {navigate: jest.fn()};
     const componentButton = <Button navigate={navigation} />;
     test('navigate on next button click', async () => {
-      const {findByTestId} = render(componentButton);
-      const button = await findByTestId('button');
-      fireEvent(button, 'press');
-    });
-    test('navigate on Prev button click', async () => {
       const {findByTestId} = render(componentButton);
       const button = await findByTestId('button');
       fireEvent(button, 'press');
