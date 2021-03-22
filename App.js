@@ -20,12 +20,12 @@ import thunk from 'redux-thunk';
 import {NativeModules, Platform} from 'react-native';
 const store = createStore(addition, applyMiddleware(thunk));
 const Stack = createStackNavigator();
-const AnModule = NativeModules.ReactJava;
+const AndroidModule = NativeModules.ReactJava;
 
 const App = () => {
   useEffect(() => {
     if (Platform.OS === 'android') {
-      AnModule.checkForEmulator();
+      AndroidModule.checkForEmulator();
     }
   }, []);
   return (
